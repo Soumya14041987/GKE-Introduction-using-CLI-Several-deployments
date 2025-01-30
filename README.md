@@ -19,6 +19,11 @@ gcloud config set compute/zone ZONE
 gsutil -m cp -r gs://spls/gsp053/orchestrate-with-kubernetes .
 cd orchestrate-with-kubernetes/kubernetes
 
+Or to flag the network & specific sub network 
+
+gcloud container clusters create griffin-dev --zone us-east4-b --num-nodes 2 --machine-type e2-standard-4 --network griffin-dev-vpc --subnetwork
+ griffin-dev-wp
+
 # Create a cluster with 3 nodes (this will take a few minutes to complete):
 
 gcloud container clusters create bootcamp \
